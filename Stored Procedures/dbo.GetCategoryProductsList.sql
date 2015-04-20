@@ -14,7 +14,9 @@ AS
                 p.ShortName ,
                 p.Description
         FROM    dbo.Category AS c
-                INNER JOIN dbo.Product AS p ON p.CategoryID = c.ID;
+                INNER JOIN dbo.Product AS p ON p.CategoryID = c.ID
+		WHERE 
+				c.CategoryCode	=	@CategoryCode;
         RETURN 0;
     END;
 GO

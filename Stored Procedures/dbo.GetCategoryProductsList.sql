@@ -4,9 +4,10 @@ GO
 SET ANSI_NULLS ON
 GO
 
+
 CREATE PROCEDURE [dbo].[GetCategoryProductsList]
     (
-      @CategoryCode VARCHAR(100) NULL
+      @CategoryCode VARCHAR(100)  = NULL
     )
 AS
     BEGIN
@@ -23,4 +24,5 @@ AS
 				c.CategoryCode, p.ShortName;
         RETURN 0;
     END;
+
 GO

@@ -6,6 +6,20 @@ CREATE TABLE [dbo].[Category]
 [ValidFrom] [datetime] NULL CONSTRAINT [DF__Category__ValidF__2A4B4B5E] DEFAULT (getdate()),
 [ValidTo] [datetime] NULL CONSTRAINT [DF__Category__ValidT__2B3F6F97] DEFAULT (NULL)
 ) ON [PRIMARY]
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE TRIGGER [dbo].[tr_Category_Delete] ON [dbo].[Category] FOR DELETE
+AS
+BEGIN
+
+	SELECT 'Deleted Something!'
+END
+GO
+
 ALTER TABLE [dbo].[Category] ADD 
 CONSTRAINT [PK__Category__3214EC2783BD3A3B] PRIMARY KEY CLUSTERED  ([ID]) ON [PRIMARY]
 GO
